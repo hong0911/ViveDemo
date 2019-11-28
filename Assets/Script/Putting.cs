@@ -51,23 +51,11 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private IEnumerator DoPut()
         {
-            Vector3 putPosition;
-
-            RaycastHit hitInfo;
-            bool hit = Physics.Raycast(hand.transform.position, Vector3.down, out hitInfo);
-            if (hit)
-            {
-                putPosition = hitInfo.point + (Vector3.up * 0.35f);
-            }
-            else
-            {
-                putPosition = hand.transform.position;
-                putPosition.y = Player.instance.transform.position.y;
-            }
+            Vector3 putPosition = hand.transform.position;
 
             GameObject model = GameObject.Instantiate<GameObject>(prefabToPut);
             model.transform.position = putPosition;
-            model.transform.rotation = Quaternion.Euler(0, hand.transform.eulerAngles.y, 180);
+            model.transform.rotation = Quaternion.Euler(0, hand.transform.eulerAngles.y, 0);
 
             //model.GetComponentInChildren<MeshRenderer>().material.SetColor("_TintColor", Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
 
