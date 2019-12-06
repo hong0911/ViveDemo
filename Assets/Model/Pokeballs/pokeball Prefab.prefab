@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737387557037419496}
   m_Layer: 0
-  m_Name: pokeball
+  m_Name: pokeball Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 5737387557037419498}
   - component: {fileID: 5737387557034027978}
   - component: {fileID: 5737387557035125002}
-  - component: {fileID: 9029853253480415136}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -111,16 +110,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &9029853253480415136
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5737387557037127626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 100
-  m_Center: {x: 0, y: 0, z: 0}

@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 8429379000982704586}
   - component: {fileID: 8429378977939516890}
   - component: {fileID: 8429379002251531426}
+  - component: {fileID: 9092800363219344093}
+  - component: {fileID: 9196845050305952058}
+  - component: {fileID: 8758138324099023617}
   m_Layer: 0
   m_Name: Throwable pokeball
   m_TagString: Untagged
@@ -269,6 +272,50 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &9092800363219344093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461600021779389810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761ce0c86cad4f842ab855acd01da0eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &9196845050305952058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461600021779389810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 53741707224de6843a540d11bc343870, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &8758138324099023617
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461600021779389810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1081369813499756087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,6 +323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8457791023633261764}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5737387557037127624, guid: 09aad60268c6ac84dbc892a4b5c5dee8,
         type: 3}
       propertyPath: m_Name
