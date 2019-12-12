@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class buttonControl : MonoBehaviour
 {
@@ -49,5 +50,10 @@ public class buttonControl : MonoBehaviour
                 //model.transform.position = position;
             }
         }
+    }
+
+    public void sceneChange()
+    {
+        SceneManager.LoadScene(1);
     }
 }
