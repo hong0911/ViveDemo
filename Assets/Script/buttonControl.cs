@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class buttonControl : MonoBehaviour
 {
+    public GameObject leftHand;
+    public GameObject rightHand;
+
     public GameObject[] models;
 
-    private int which;
     // Start is called before the first frame update
     void Start()
     {
-        which = models.Length;
+
     }
 
     // Update is called once per frame
@@ -20,40 +22,9 @@ public class buttonControl : MonoBehaviour
         
     }
 
-    public void ShowModels(int val)
+    public void chooseModel(int i)
     {
-        for(int i = 0; i < models.Length; i++)
-        {
-            if (i == val)
-                models[i].SetActive(true);
-            else
-                models[i].SetActive(false);
-        }
-
-        which = val;
-    }
-
-    public void turnModels(bool isR)
-    {
-        if(which < models.Length)
-        {
-            for(int i= 0;i < models[which].transform.childCount; i++)
-            {
-                GameObject model = models[which].transform.GetChild(i).gameObject;
-                //Vector3 position = model.transform.position;
-                Vector3 rotation = model.transform.eulerAngles;
-                if (isR)
-                    rotation.y -= 15;
-                else
-                    rotation.y += 15;
-                model.transform.eulerAngles = rotation;
-                //model.transform.position = position;
-            }
-        }
-    }
-
-    public void sceneChange()
-    {
-        SceneManager.LoadScene(1);
+        leftHand.GetComponent<Valve.VR.InteractionSystem.Sample.Putting>().prefabToPut = models[i];
+        leftHand.GetComponent<Valve.VR.InteractionSystem.Sample.Putting>().prefabToPut = models[i];
     }
 }

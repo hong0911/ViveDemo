@@ -14,8 +14,7 @@ namespace Valve.VR.InteractionSystem.Sample
         public Hand hand;
 
         public GameObject prefabToPut;
-
-
+        
         private void OnEnable()
         {
             if (hand == null)
@@ -52,6 +51,7 @@ namespace Valve.VR.InteractionSystem.Sample
         private IEnumerator DoPut()
         {
             Vector3 putPosition = hand.transform.position;
+            putPosition.y = 0;
 
             GameObject model = GameObject.Instantiate<GameObject>(prefabToPut);
             model.transform.position = putPosition;
@@ -62,8 +62,6 @@ namespace Valve.VR.InteractionSystem.Sample
             Rigidbody rigidbody = model.GetComponent<Rigidbody>();
             if (rigidbody != null)
                 rigidbody.isKinematic = true;
-
-
 
             Vector3 initialScale = Vector3.one * 0.01f;
             Vector3 targetScale = Vector3.one * (1 + (Random.value * 0.25f));
@@ -77,8 +75,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 model.transform.localScale = Vector3.Slerp(initialScale, targetScale, (Time.time - startTime) / overTime);
                 yield return null;
             }
-
-
+            
             if (rigidbody != null)
                 rigidbody.isKinematic = false;
         }

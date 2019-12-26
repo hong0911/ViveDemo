@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: df88e97d0121dde4cbbe5ce5de4b552e
   - enabled: 1
     path: Assets/SteamVR/InteractionSystem/Samples/Interactions_Example.unity
     guid: e3b77830391f10343929883b18f4d5ae
