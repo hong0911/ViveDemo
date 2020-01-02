@@ -17,8 +17,13 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public GameObject[] models;
 
+        public int which = 0;
+
         private void OnEnable()
         {
+            //buttons.transform.GetChild(which).gameObject.SetActive(true);
+            chooseModel(which);
+
             if (hand == null)
                 hand = this.GetComponent<Hand>();
 
@@ -28,16 +33,16 @@ namespace Valve.VR.InteractionSystem.Sample
                 return;
             }
 
-            putAction.AddOnChangeListener(OnPutActionChange, hand.handType);
+            putAction.AddOnChangeListener(ShowActionChange, hand.handType);
         }
 
         private void OnDisable()
         {
             if (putAction != null)
-                putAction.RemoveOnChangeListener(OnPutActionChange, hand.handType);
+                putAction.RemoveOnChangeListener(ShowActionChange, hand.handType);
         }
 
-        private void OnPutActionChange(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources inputSource, bool newValue)
+        private void ShowActionChange(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources inputSource, bool newValue)
         {
             if (newValue)
             {
@@ -47,13 +52,23 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public void Show()
         {
-            buttons.SetActive(false);
+            //buttons.transform.GetChild(which).gameObject.SetActive(false);
+            which++;
+            which = which % models.Length;
+            buttons.transform.GetChild(which).gameObject.SetActive(true);
+            chooseModel(which);
+            Invoke("NotShow", 0.25f);
         }
 
-            public void chooseModel(int i)
+        void NotShow()
+        {
+            buttons.transform.GetChild(which).gameObject.SetActive(false);
+        }
+
+        public void chooseModel(int i)
         {
             leftHand.GetComponent<Valve.VR.InteractionSystem.Sample.Putting>().prefabToPut = models[i];
-            leftHand.GetComponent<Valve.VR.InteractionSystem.Sample.Putting>().prefabToPut = models[i];
+            rightHand.GetComponent<Valve.VR.InteractionSystem.Sample.Putting>().prefabToPut = models[i];
         }
     }
 }
