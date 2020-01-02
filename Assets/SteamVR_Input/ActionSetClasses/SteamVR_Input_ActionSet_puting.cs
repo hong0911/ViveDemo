@@ -24,5 +24,13 @@ namespace Valve.VR
                 return SteamVR_Actions.puting_Model;
             }
         }
+        
+        public virtual SteamVR_Action_Boolean Show
+        {
+            get
+            {
+                return SteamVR_Actions.puting_Show;
+            }
+        }
     }
 }

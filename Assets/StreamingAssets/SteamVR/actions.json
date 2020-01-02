@@ -85,6 +85,10 @@
     {
       "name": "/actions/puting/in/Model",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/puting/in/Show",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -174,7 +178,8 @@
       "/actions/platformer/in/Jump": "Jump",
       "/actions/default/in/SnapTurnLeft": "Snap Turn (Left)",
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
-      "/actions/puting/in/Model": "Model"
+      "/actions/puting/in/Model": "Model",
+      "/actions/puting/in/Show": "Show"
     }
   ]
 }
